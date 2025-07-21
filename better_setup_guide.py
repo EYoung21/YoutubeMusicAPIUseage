@@ -1,0 +1,66 @@
+#!/usr/bin/env python3
+"""
+Detailed setup guide for YouTube Music API authentication.
+"""
+
+def print_detailed_instructions():
+    print("=" * 70)
+    print("🎵 YouTube Music Authentication - Detailed Guide")
+    print("=" * 70)
+    print()
+    print("Let's find the right request in the Network tab:")
+    print()
+    print("1. Open YouTube Music: https://music.youtube.com")
+    print("2. Open Developer Tools (F12)")
+    print("3. Click the 'Network' tab")
+    print("4. Clear the network log (trash/clear button)")
+    print("5. Refresh the page (Ctrl+R or Cmd+R)")
+    print()
+    print("🔍 WHAT TO LOOK FOR in the Network tab:")
+    print()
+    print("Look for ANY of these request names:")
+    print("  ✓ browse")
+    print("  ✓ browse?alt=json") 
+    print("  ✓ browse?key=...")
+    print("  ✓ search")
+    print("  ✓ get_search_suggestions")
+    print("  ✓ Any request to 'music.youtube.com/youtubei/v1/'")
+    print()
+    print("💡 TIPS:")
+    print("  • Filter by 'XHR' or 'Fetch' to see only API calls")
+    print("  • Look for requests with Status 200")
+    print("  • The request should be to 'music.youtube.com'")
+    print("  • Try clicking on 'Your Library' or 'Home' to generate more requests")
+    print()
+    print("6. Right-click on any of these requests")
+    print("7. Select 'Copy as cURL' or 'Copy request headers'")
+    print()
+    print("📝 Alternative method:")
+    print("If you can't find the requests above, try this:")
+    print("  • Click on 'Your Library' in YouTube Music")
+    print("  • Look for new requests that appear")
+    print("  • Try 'Copy as cURL' for any music.youtube.com request")
+    print()
+    print("=" * 70)
+    print()
+
+if __name__ == "__main__":
+    print_detailed_instructions()
+    
+    choice = input("Have you found a request? (y/n): ").lower().strip()
+    
+    if choice == 'y':
+        print("\nGreat! Now let's set up authentication:")
+        print("Run this command and paste your headers when prompted:")
+        print()
+        print("source venv/bin/activate && python -c \"from ytmusicapi import setup; setup('headers_auth.json')\"")
+        print()
+        print("When prompted, paste your headers and press Ctrl+D (Cmd+D on Mac)")
+    else:
+        print("\nNo worries! Let's try a different approach...")
+        print("You can also try these steps:")
+        print("1. Go to your Favorites playlist directly")
+        print("2. Right-click anywhere on the page → 'Inspect Element'")
+        print("3. Go to Network tab and refresh")
+        print("4. Look for any request to 'music.youtube.com'")
+        print("5. Copy that request's headers") 
